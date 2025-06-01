@@ -1,12 +1,12 @@
-import logoIcon from "../../assets/images/logo.svg";
+import * as SC from "./LogoStyled"
+
+import logoIcon from "../../assets/images/logo-88.svg";
 const Logo = () => {
   return (
-    <div>
-      <div>
-        <img src={logoIcon} alt="logo" />
+      <SC.LogoCon>
+        <img src={logoIcon} alt="logo" style={{fill:"blue"}}/>
         <p>Extensions</p>
-      </div>
-    </div>
+      </SC.LogoCon>
   );
 };
 

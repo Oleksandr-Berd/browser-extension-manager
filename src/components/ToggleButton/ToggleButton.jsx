@@ -1,3 +1,5 @@
+import * as SC from "./ToggleButtonStyled"
+
 import { useContext } from "react";
 import darkIcon from "../../assets/images/icon-moon.svg";
 import lightIcon from "../../assets/images/icon-sun.svg";
@@ -9,9 +11,9 @@ const ToggleButton = () => {
 const toggleTheme = () => toggle(theme)
 
   return (
-    <button type="button" onClick={toggleTheme}>
+    <SC.ButtonToggleStyled type="button" onClick={toggleTheme}>
       <img src={theme === "light" ? darkIcon : lightIcon} alt="toggleIcon" />
-    </button>
+    </SC.ButtonToggleStyled>
   );
 };
 
