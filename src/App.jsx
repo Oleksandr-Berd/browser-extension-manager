@@ -10,24 +10,22 @@ import ExtensionListConsole from "./components/ExtensionListConsole/ExtensionLis
 import ExtensionList from "./components/ExtensionList/ExtensionList";
 function App() {
   const { theme } = useContext(ThemeContext);
-const [filter, setFilter] = useState("all")
+  const [filter, setFilter] = useState("all");
+
   const commonTheme = theme === "light" ? lightTheme : darkTheme;
 
-const handleFilter = (currentFilter) => setFilter(currentFilter)
-  
-console.log(filter);
+  const handleFilter = (currentFilter) => setFilter(currentFilter);
 
+  console.log(filter);
 
   return (
-    
-      <ThemeProvider theme={commonTheme}>
-        <SC.AppStyled>
-        <Header test={theme}/>
-        <ExtensionListConsole handleFilter={handleFilter}/>
-        <ExtensionList/>
-        </SC.AppStyled>
-      </ThemeProvider>
-    
+    <ThemeProvider theme={commonTheme}>
+      <SC.AppStyled>
+        <Header test={theme} />
+        <ExtensionListConsole handleFilter={handleFilter} />
+        <ExtensionList />
+      </SC.AppStyled>
+    </ThemeProvider>
   );
 }
 

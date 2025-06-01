@@ -1,9 +1,11 @@
+import * as SC from "./ExtensionListStyled"
+
 import { extensions } from "../../db/data";
 import ExtensionItem from "../ExtensionItem/ExtensionItem";
 
 const ExtensionList = () => {
   return (
-    <ul>
+    <SC.ExtensionListStyled>
       {extensions &&
         extensions.map(({ id, title, text, pic }) => (
           <ExtensionItem
@@ -14,7 +16,7 @@ const ExtensionList = () => {
             pic={pic}
           />
         ))}
-    </ul>
+    </SC.ExtensionListStyled>
   );
 };
 

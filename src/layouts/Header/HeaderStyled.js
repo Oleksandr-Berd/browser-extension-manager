@@ -1,10 +1,7 @@
 import styled from "@emotion/styled";
 
 export const HeaderStyled = styled.header`
-padding-top: 20px;
 padding-bottom: 20px;
-padding-left: 16px;
-padding-right: 16px;
 `
 
 export const HeaderCon = styled.div`

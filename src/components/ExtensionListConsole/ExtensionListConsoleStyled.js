@@ -4,8 +4,8 @@ import { Field } from "formik";
 export const FormStyled = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
 
   text-align: center;
 
