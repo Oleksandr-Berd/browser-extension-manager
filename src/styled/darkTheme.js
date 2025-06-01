@@ -15,7 +15,8 @@ const darkTheme = {
     rootBg:"#091540",
     font:"#FBFDFE",
     itemBg:"#202535",
-    fontText:"#C6C6C6"
+    fontText:"#C6C6C6",
+    selected:"#C7231A",
   }
 };
 

@@ -15,7 +15,8 @@ const lightTheme = {
     rootBg:"#D6E2F5",
     font:"#091540",
     itemBg:"#FBFDFE",
-    fontText:"#535868"
+    fontText:"#535868",
+    selected:"#C7231A",
   }
 };
 
