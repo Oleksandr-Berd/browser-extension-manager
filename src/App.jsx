@@ -6,6 +6,7 @@ import lightTheme from "./styled/lightTheme";
 import darkTheme from "./styled/darkTheme";
 import { ThemeProvider } from "@emotion/react";
 import Header from "./layouts/Header/Header";
+import ExtensionListConsole from "./components/ExtensionListConsole/ExtensionListConsole";
 import ExtensionList from "./components/ExtensionList/ExtensionList";
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -22,7 +23,8 @@ console.log(filter);
       <ThemeProvider theme={commonTheme}>
         <SC.AppStyled>
         <Header test={theme}/>
-        <ExtensionList handleFilter={handleFilter}/>
+        <ExtensionListConsole handleFilter={handleFilter}/>
+        <ExtensionList/>
         </SC.AppStyled>
       </ThemeProvider>
     
