@@ -1,19 +1,25 @@
 import * as SC from "./ExtensionListStyled"
 
-import { extensions } from "../../db/data";
 import ExtensionItem from "../ExtensionItem/ExtensionItem";
+import { useEffect } from "react";
 
-const ExtensionList = () => {
+const ExtensionList = ({fetch, extensions}) => {
+
+useEffect(()=>{
+  fetch()
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])
+
   return (
     <SC.ExtensionListStyled>
       {extensions &&
-        extensions.map(({ id, title, text, pic }) => (
+        extensions.map(({ _id, name, text, coverImage }) => (
           <ExtensionItem
-            key={id}
-            id={id}
-            title={title}
+            key={_id}
+            id={_id}
+            title={name}
             text={text}
-            pic={pic}
+            pic={coverImage}
           />
         ))}
     </SC.ExtensionListStyled>

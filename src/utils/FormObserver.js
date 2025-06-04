@@ -9,7 +9,7 @@ useEffect(() => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default FormObserver

@@ -8,7 +8,6 @@ import logoConsolePlus from "../assets/images/logo-console-plus.svg";
 
 export const extensions = [
   {
-    id: 1,
     title: "ViewportBuddy",
     text: "Simulates various screen resolutions directly within the browser.",
     pic: logoViewportBuddy,
