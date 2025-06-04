@@ -1,6 +1,7 @@
 import * as SC from "./ExtensionListStyled";
 import ExtensionItem from "../ExtensionItem/ExtensionItem";
 import { useEffect } from "react";
+import DNASpinner from "../Spinner/DNA/DNA";
 
 const ExtensionList = ({ fetch, extensions, isLoading }) => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const ExtensionList = ({ fetch, extensions, isLoading }) => {
   return (
     <>
       {isLoading ? (
-        <h1>Is Loading...</h1>
+        <DNASpinner/>
       ) : (
         <SC.ExtensionListStyled>
           {extensions &&
