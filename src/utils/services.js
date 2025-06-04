@@ -12,8 +12,21 @@ export const getAll = async () => {
 
     return data.result;
   } catch (error) {
+    const { response } = error;
 
-const {response} = error
+    return response.data;
+  }
+};
+
+export const removeItem = async (_id) => {
+  try {
+    const response = await instance.get(`/${_id}`);
+
+    const { data } = response;
+    
+    return data.result;
+  } catch (error) {
+    const { response } = error;
 
     return response.data;
   }

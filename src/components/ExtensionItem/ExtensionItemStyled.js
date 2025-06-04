@@ -84,9 +84,13 @@ export const RemoveBtn = styled.button`
   line-height: 1.4;
   letter-spacing: -0.5px;
 
-  background-color: inherit;
+  background-color: transparent;
   color: ${({ theme }) => theme.colors.font};
 
   border: 1px solid #c6c6c6;
   border-radius: 36px;
 `;
+
+export const SwitchBtn = styled.button`
+background-color: transparent;
+`

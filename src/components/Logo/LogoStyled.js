@@ -12,5 +12,7 @@ align-items: center;
     line-height: 1.3;
     letter-spacing: -0.5px;
     font-weight: ${({theme})=> theme.weight.semiBold};
+
+    color: ${({ theme }) => theme.colors.font};
 }
 `
