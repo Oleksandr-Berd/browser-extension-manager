@@ -12,6 +12,9 @@ export const getAll = async () => {
 
     return data.result;
   } catch (error) {
-    return error.response;
+
+const {response} = error
+
+    return response.data;
   }
 };

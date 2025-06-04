@@ -9,6 +9,7 @@ import Header from "./layouts/Header/Header";
 import ExtensionListConsole from "./components/ExtensionListConsole/ExtensionListConsole";
 import ExtensionList from "./components/ExtensionList/ExtensionList";
 import { getAll } from "./utils/services";
+import ErrorComp from "./components/Error/ErrorComp";
 function App() {
   const { theme } = useContext(ThemeContext);
   const [filter, setFilter] = useState("all");
@@ -21,22 +22,29 @@ function App() {
   const fetchExtensions = async () => {
     setIsLoading(true)
     const result = await getAll()
+if (result.message){
+  setIsError(result.message)
+}
+    
     setExtensions(result)
     setIsLoading(false)
   }
 
 
-
   const handleFilter = (currentFilter) => setFilter(currentFilter);
 
-  console.log(`error: ${isError}; extensions:${extensions}, isLoading:${isLoading}, filter:${filter}`);
+  // console.log(`error: ${isError}; extensions:${extensions}, isLoading:${isLoading}, filter:${filter}`);
 
   return (
     <ThemeProvider theme={commonTheme}>
       <SC.AppStyled>
         <Header test={theme} />
         <ExtensionListConsole handleFilter={handleFilter} />
-        <ExtensionList fetch={fetchExtensions} extensions={extensions}/>
+        {isError ?
+        <ErrorComp isError={isError}/>
+        :
+        <ExtensionList fetch={fetchExtensions} extensions={extensions} isLoading={isLoading} />
+        }
       </SC.AppStyled>
     </ThemeProvider>
   );
