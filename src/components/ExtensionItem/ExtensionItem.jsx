@@ -2,17 +2,20 @@ import * as SC from "./ExtensionItemStyled";
 
 import switchOnIcon from "../../assets/images/switchOn.svg";
 import switchOffIcon from "../../assets/images/switchOff.svg";
-import { useState } from "react";
 const ExtensionItem = (props) => {
-  const [isSwitch, setIsSwitch] = useState(false);
-  const { title, text, pic, filter, handleRemove, _id } = props || {};
+  const { title, text, pic, handleRemove, _id, toggleSwitch, state } = props || {};
 
-  const handleSwitch = () => setIsSwitch(!isSwitch);
+  const handleSwitch = () => {
 
-  const remove =() =>{
+    const newState = state ==="active" ? "inactive" : "active"
 
-    handleRemove(_id)
-  }
+     toggleSwitch(_id, newState)
+  };
+
+  const remove = () => {
+    handleRemove(_id);
+   
+  };
 
   return (
     <SC.ItemStyled _id={_id}>
@@ -26,9 +29,14 @@ const ExtensionItem = (props) => {
         </SC.TextCon>
       </SC.ContentCon>
       <SC.BtnCon>
-        <SC.RemoveBtn type="button" onClick={remove}>Remove</SC.RemoveBtn>
+        <SC.RemoveBtn type="button" onClick={remove}>
+          Remove
+        </SC.RemoveBtn>
         <SC.SwitchBtn type="button" onClick={handleSwitch}>
-          <img src={filter ? switchOnIcon : switchOffIcon} alt="switch button" />
+          <img
+            src={state === "active" ? switchOnIcon : switchOffIcon}
+            alt="switch button"
+          />
         </SC.SwitchBtn>
       </SC.BtnCon>
     </SC.ItemStyled>

@@ -18,6 +18,20 @@ export const getAll = async () => {
   }
 };
 
+export const upDateElement = async (_id, newState) => {
+    try {
+        const response = await instance.patch(`/${_id}`, {newState})
+
+        const {data} = response
+
+        return data
+       
+    } catch (error) {
+         const { response } = error;
+
+    return response.data;
+    }
+}
 export const removeItem = async (_id) => {
   try {
     const response = await instance.get(`/${_id}`);
