@@ -36,6 +36,7 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 
+
 @media (min-width: 768px){
   & label:not(:last-of-type){
     margin-right: 32px;
@@ -69,6 +70,11 @@ border-radius: 12px;
 
 &:not(:last-of-type){
     margin-right: 12px;
+}
+
+&:hover{
+cursor: pointer;
+
 }
 `
 

@@ -13,11 +13,11 @@ export const ItemStyled = styled.li`
   &:not(:last-of-type) {
     margin-bottom: 12px;
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       margin: 0;
     }
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -99,8 +99,22 @@ export const RemoveBtn = styled.button`
 
   border: 1px solid #c6c6c6;
   border-radius: 36px;
+
+  transition: color 0.3s, background-color 0.3s;
+
+  &:focus,
+  &:active,
+  &:hover {
+    background-color: #c7231a;
+    color: #fff;
+
+    transition: color 0.3s, background-color 0.3s;
+    cursor: pointer;
+  }
 `;
 
 export const SwitchBtn = styled.button`
-background-color: transparent;
-`
+  background-color: transparent;
+
+  cursor: pointer;
+`;

@@ -15,4 +15,5 @@ background-color: #C6C6C6;
 
 border-radius: 12px;
 
+cursor: pointer;
 `
