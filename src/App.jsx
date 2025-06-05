@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as SC from "./AppStyled";
 
 import ThemeContext from "./context/styled/themeContext";
@@ -17,6 +17,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(null);
   const [extensions, setExtensions] = useState(null);
+  const [allExtensions, setAllExtensions] = useState(null);
 
   const commonTheme = theme === "light" ? lightTheme : darkTheme;
 
@@ -29,13 +30,16 @@ function App() {
       }
 
       setExtensions(result);
+      setAllExtensions(result);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handleFilter = (currentFilter) => setFilter(currentFilter);
+  const handleFilter = (currentFilter) => {
+    setFilter(currentFilter.filter);
+  };
 
   const handleRemove = async (_id) => {
     try {
@@ -51,6 +55,16 @@ function App() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (!allExtensions) return; // prevent filtering null
+
+  if (filter === "all") {
+    setExtensions(allExtensions);
+  } else {
+    setExtensions(allExtensions.filter((el) => el.state === filter));
+  }
+  }, [filter, allExtensions]);
 
   return (
     <ThemeProvider theme={commonTheme}>
