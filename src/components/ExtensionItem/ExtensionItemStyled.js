@@ -12,6 +12,16 @@ export const ItemStyled = styled.li`
 
   &:not(:last-of-type) {
     margin-bottom: 12px;
+
+    @media (min-width: 768px){
+      margin: 0;
+    }
+
+    @media (min-width: 768px){
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 `;
 

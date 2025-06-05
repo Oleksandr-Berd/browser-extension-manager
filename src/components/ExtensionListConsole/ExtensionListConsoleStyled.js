@@ -4,18 +4,29 @@ import { Field } from "formik";
 export const FormStyled = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 24px;
-  padding-right: 24px;
 
   text-align: center;
 
   color: ${({ theme }) => theme.colors.font};
+
+  @media (min-width: 768px){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 32px;
+  }
 
   & > h3 {
     margin-bottom: 24px;
 
     font-size: 34px;
     letter-spacing: -1px;
+
+    @media (min-width: 768px){
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -24,6 +35,12 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
+
+@media (min-width: 768px){
+  & label:not(:last-of-type){
+    margin-right: 32px;
+  }
+}
 `
 
 export const CurrentRadio = styled.div`
