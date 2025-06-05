@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5002/extensions",
+  baseURL: "https://server-25.onrender.com/extensions",
 });
 
 export const getAll = async () => {
