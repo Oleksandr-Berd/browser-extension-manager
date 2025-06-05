@@ -42,10 +42,8 @@ function App() {
       await removeItem(_id);
 
       setIsLoading(true);
-      const result = await getAll();
-      if (result.message) {
-        setIsError(result.message);
-      }
+
+      const result = extensions.filter((el) => el._id !== _id);
 
       setExtensions(result);
       setIsLoading(false);
